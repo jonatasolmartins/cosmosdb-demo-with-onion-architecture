@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1xGg55Fn7Fq39FWGpulinZRa0RkCH+dGdnZ3KOLBakK1xwyh4zhm9wFppDGO11n5QVEehjtOnipRLu9I6iUGGQ==",
+  "success": true,
+  "projectFilePath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj",
+  "expectedPackageFiles": [
+    "/Users/jonatasolmartins/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
