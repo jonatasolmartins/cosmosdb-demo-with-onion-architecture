@@ -16,4 +16,11 @@
       <ProjectReference Include="..\..\Core\Domain\ChatRoom.Core.Domain.Abstractions\ChatRoom.Core.Domain.Abstractions.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Data\CosmosDbScripts\UserDefinedFunctions\convertDate.js" />
+      <Content Include="Data\CosmosDbScripts\UserDefinedFunctions\convertDate.js">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

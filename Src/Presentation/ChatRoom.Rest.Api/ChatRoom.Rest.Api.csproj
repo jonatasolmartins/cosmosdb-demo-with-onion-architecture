@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Domain\ChatRoom.Core.Domain.Abstractions\ChatRoom.Core.Domain.Abstractions.csproj" />
-      <ProjectReference Include="..\ChatRoom.Core.Domain.Abstractions\ChatRoom.Core.Domain.Abstractions.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ChatRoom.Core.Domain.Models/1.0.0": {
         "dependencies": {
+          "ChatRoom.SharedKernel": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
@@ -20,6 +21,11 @@
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.0.2.21924"
           }
+        }
+      },
+      "ChatRoom.SharedKernel/1.0.0": {
+        "runtime": {
+          "ChatRoom.SharedKernel.dll": {}
         }
       }
     }
@@ -36,6 +42,11 @@
       "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "ChatRoom.SharedKernel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

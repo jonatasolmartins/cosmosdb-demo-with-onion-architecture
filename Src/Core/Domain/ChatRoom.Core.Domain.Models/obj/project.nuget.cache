@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Le2570rkTyPKKRXhY8CwD9Kpmo55R8zzEG7hNzg0XFvpkXtHRMoGHxLX/RiM+vcU1TyKd/eSTym0P/BPfNIVJg==",
+  "dgSpecHash": "WZ73uGnl+q84Y4FKnb2JEiC6GtHvjoual6K2HcIgbKu40/r175RX7fc8J4TFYlaem86fOk4SBQfoi/eXtwnKtA==",
   "success": true,
   "projectFilePath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Core/Domain/ChatRoom.Core.Domain.Models/ChatRoom.Core.Domain.Models.csproj",
   "expectedPackageFiles": [

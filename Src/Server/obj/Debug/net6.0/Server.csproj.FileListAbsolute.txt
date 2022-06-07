@@ -55,14 +55,12 @@
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Server/obj/Debug/net6.0/refint/@Server.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Server/obj/Debug/net6.0/@Server.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Server/obj/Debug/net6.0/ref/@Server.dll
-/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/@Server.dll
-/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/refint/@Server.dll
-/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/@Server.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Microsoft.Azure.Cosmos.ServiceInterop.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Cosmos.CRTCompat.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/appsettings.Development.json
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/appsettings.json
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/@Server
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Data/CosmosDbScripts/UserDefinedFunctions/convertDate.js
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/@Server.deps.json
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/@Server.runtimeconfig.json
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/@Server.dll
@@ -74,6 +72,8 @@
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Microsoft.Azure.Cosmos.Serialization.HybridRow.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Microsoft.Bcl.HashCode.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Microsoft.OpenApi.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/Newtonsoft.Json.dll
@@ -96,7 +96,9 @@
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.Core.Domain.Abstractions.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.Core.Domain.Models.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.Infrastructure.Database.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.Rest.Api.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.Infrastructure.Database.pdb
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.Rest.Api.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.Core.Domain.Abstractions.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.Core.Domain.Models.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/Server.csproj.AssemblyReference.cache
@@ -110,5 +112,10 @@
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/staticwebassets.development.json
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/scopedcss/bundle/@Server.styles.css
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/Server.csproj.CopyComplete
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/@Server.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/refint/@Server.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/@Server.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/Server.genruntimeconfig.cache
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/Debug/net6.0/ref/@Server.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.SharedKernel.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/bin/Debug/net6.0/ChatRoom.SharedKernel.pdb

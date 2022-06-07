@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "SVBjrWUVTDbL6/TQaTZA2bOLFqTPAvxppJ0Y1nCa6mfaUIAByLSCBshZ0DCxdFChrIij3o0ue2Qd2CAnKwY0AQ==",
-  "success": false,
+  "dgSpecHash": "asRiod70fggWwD04/99XFPX7Nge1Vu7f6vYW2OmkcHBHdaLgv05FSDVo/SgjgEM9hY5++DMUjVXnLL2MGA8ekQ==",
+  "success": true,
   "projectFilePath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj",
   "expectedPackageFiles": [
     "/Users/jonatasolmartins/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -71,15 +71,5 @@
     "/Users/jonatasolmartins/.nuget/packages/system.threading.tasks/4.0.11/system.threading.tasks.4.0.11.nupkg.sha512",
     "/Users/jonatasolmartins/.nuget/packages/system.threading.tasks.extensions/4.5.1/system.threading.tasks.extensions.4.5.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project '/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Presentation/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Presentation/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

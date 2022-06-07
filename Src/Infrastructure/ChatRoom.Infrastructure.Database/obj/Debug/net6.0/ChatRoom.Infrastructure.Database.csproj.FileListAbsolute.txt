@@ -17,11 +17,9 @@
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/refint/ChatRoom.Infrastructure.Database.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ChatRoom.Infrastructure.Database.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ref/ChatRoom.Infrastructure.Database.dll
-/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ChatRoom.Infrastructure.Database.dll
-/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/refint/ChatRoom.Infrastructure.Database.dll
-/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ChatRoom.Infrastructure.Database.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/bin/Debug/net6.0/Microsoft.Azure.Cosmos.ServiceInterop.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/bin/Debug/net6.0/Cosmos.CRTCompat.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/bin/Debug/net6.0/Data/CosmosDbScripts/UserDefinedFunctions/convertDate.js
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/bin/Debug/net6.0/ChatRoom.Infrastructure.Database.deps.json
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/bin/Debug/net6.0/ChatRoom.Infrastructure.Database.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/bin/Debug/net6.0/ChatRoom.Infrastructure.Database.pdb
@@ -35,4 +33,9 @@
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ChatRoom.Infrastructure.Database.AssemblyInfo.cs
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ChatRoom.Infrastructure.Database.csproj.CoreCompileInputs.cache
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ChatRoom.Infrastructure.Database.csproj.CopyComplete
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ChatRoom.Infrastructure.Database.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/refint/ChatRoom.Infrastructure.Database.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ChatRoom.Infrastructure.Database.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/Debug/net6.0/ref/ChatRoom.Infrastructure.Database.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/bin/Debug/net6.0/ChatRoom.SharedKernel.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/bin/Debug/net6.0/ChatRoom.SharedKernel.pdb

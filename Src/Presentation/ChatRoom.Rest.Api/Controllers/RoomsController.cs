@@ -1,5 +1,6 @@
 using ChatRoom.Core.Domain.Abstractions.Repositories;
 using ChatRoom.Core.Domain.Models;
+using ChatRoom.Rest.Api.DataTransferObject;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChatRoom.Rest.Api.Controllers;
@@ -8,10 +9,10 @@ namespace ChatRoom.Rest.Api.Controllers;
 [Route("/api/[controller]")]
 public class RoomsController : ControllerBase
 {
-    private readonly IRoomRepository _roomRepository;
-    public RoomsController(IRoomRepository roomRepository)
+    private readonly IRepository _roomRepository;
+    public RoomsController(IRepository repository)
     {
-        _roomRepository = roomRepository;
+        _roomRepository = repository;
     }
 
     [HttpGet]
@@ -21,15 +22,49 @@ public class RoomsController : ControllerBase
         try
         {
             var result = await _roomRepository.GetAll();
-            if (result == null) throw new ArgumentException();
+            if (result == null) NoContent();
             
             return Ok(result);
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            return StatusCode(statusCode: 500);
+            return StatusCode(500, e.Message);
         }
       
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(Guid id)
+    {
+        var result = await _roomRepository.GetById(id);
+        if (result == null) NotFound("Room not found");
+            
+        return Ok(result);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(RoomForCreate newRoomForCreate)
+    {
+        var room = new Room()
+        {
+            Id = Guid.NewGuid(),
+            Name = newRoomForCreate.Name,
+            DateCreated = DateTime.UtcNow.ToString(),
+            Chats = new List<Chat>
+            {
+                new()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = newRoomForCreate.Name,
+                    DateCreated = DateTime.Now,
+                    Messages = new List<Message>()
+                }
+            },
+        };
+        var result = await _roomRepository.Create(room);
+
+        if (!result) return BadRequest();
+
+        return StatusCode(201);
     }
 }

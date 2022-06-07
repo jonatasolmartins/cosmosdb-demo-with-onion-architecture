@@ -28,3 +28,5 @@
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/obj/Debug/net6.0/refint/ChatRoom.Core.Domain.Abstractions.dll
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/obj/Debug/net6.0/ChatRoom.Core.Domain.Abstractions.pdb
 /Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/obj/Debug/net6.0/ref/ChatRoom.Core.Domain.Abstractions.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/bin/Debug/net6.0/ChatRoom.SharedKernel.dll
+/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/bin/Debug/net6.0/ChatRoom.SharedKernel.pdb
