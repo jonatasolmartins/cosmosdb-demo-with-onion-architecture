@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6+E/aTR+im0Kv4S9/XuGI96pVLIxGHx8+vGcSoBZfz7qF8ZJO57Ow7p8Nue8fT5ydzryBg1huG/WBn3ATuL5OA==",
+  "dgSpecHash": "/dgNN3DC1TBCd9ZDDV0QCURfkTQU9YUf2y3V79h4TvamWPL0SFXIcZSsD80YZMRmjFE0ysEMSGU10Pl+JIQAuw==",
   "success": true,
-  "projectFilePath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj",
+  "projectFilePath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj",
   "expectedPackageFiles": [
     "/Users/jonatasolmartins/.nuget/packages/azure.core/1.19.0/azure.core.1.19.0.nupkg.sha512",
     "/Users/jonatasolmartins/.nuget/packages/microsoft.azure.cosmos/3.27.2/microsoft.azure.cosmos.3.27.2.nupkg.sha512",

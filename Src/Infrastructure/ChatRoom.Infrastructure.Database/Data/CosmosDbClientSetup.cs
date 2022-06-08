@@ -8,8 +8,9 @@ namespace ChatRoom.Infrastructure.Database.Data;
 
 public static class CosmosDbClientSetup
 {
-    private const string PathToConvertDateFunction =
-        @"../../../..//Infrastructure/ChatRoom.Infrastructure.Database/Data/CosmosDbScripts/UserDefinedFunctions/convertDate.js";
+    private const string PathToFileJs =
+        @"../../../..//Infrastructure/ChatRoom.Infrastructure.Database/Data/";
+    
     public static async Task<CosmosClient> Setup(IConfigurationSection configurationSection)
     {
         var databaseName = configurationSection.GetSection("DatabaseName").Value;
@@ -28,21 +29,28 @@ public static class CosmosDbClientSetup
 
         Microsoft.Azure.Cosmos.Database database =  client.CreateDatabaseIfNotExistsAsync(databaseName).Result;
 
-        var containerProperties = new ContainerProperties()
+        var roomContainerProperties = new ContainerProperties()
         {
             Id = "Room",
             PartitionKeyPath = "/id"
         };
 
-        Container roomContainer =  database.CreateContainerIfNotExistsAsync(containerProperties).Result;
-            
-        await CreateUserDefinedFunction(roomContainer, PathToConvertDateFunction);
-            
+        Container roomContainer =  database.CreateContainerIfNotExistsAsync(roomContainerProperties).Result;
+        
+        var messageContainerProperties = new ContainerProperties()
+        {
+            Id = "Message",
+            PartitionKeyPath = "/id"
+        };
+
         foreach (var room in SeedData())
         {
-            _ = roomContainer.CreateItemAsync(room, new PartitionKey(room.Id.ToString()));
+            _ = await roomContainer.CreateItemAsync(room);
         }
-
+        
+        _ =  database.CreateContainerIfNotExistsAsync(messageContainerProperties).Result;
+        await CreateUserDefinedFunction(roomContainer, $"{PathToFileJs}{configurationSection.GetSection("udf_convertDate").Value}");
+        await UpsertStoredProcedureAsync(roomContainer, $"{PathToFileJs}{configurationSection.GetSection("sp_updateMessage").Value}");
         return client;
     }
     
@@ -84,16 +92,18 @@ public static class CosmosDbClientSetup
         }
     }
     
-    private static async Task UpsertStoredProcedureAsync(Container container, string scriptFileName)
+    private static async Task UpsertStoredProcedureAsync(Container container, string scriptFilePath)
     {
-        string scriptId = Path.GetFileNameWithoutExtension(scriptFileName);
+        scriptFilePath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, scriptFilePath));
+
+        var scriptId = Path.GetFileNameWithoutExtension(scriptFilePath);
         if (await StoredProcedureExists(container, scriptId))
         {
-            await container.Scripts.ReplaceStoredProcedureAsync(new StoredProcedureProperties(scriptId, File.ReadAllText(scriptFileName)));
+            await container.Scripts.ReplaceStoredProcedureAsync(new StoredProcedureProperties(scriptId, File.ReadAllText(scriptFilePath)));
         }
         else
         {
-            await container.Scripts.CreateStoredProcedureAsync(new StoredProcedureProperties(scriptId, File.ReadAllText(scriptFileName)));
+            await container.Scripts.CreateStoredProcedureAsync(new StoredProcedureProperties(scriptId, File.ReadAllText(scriptFilePath)));
         }
     }
 
@@ -145,57 +155,56 @@ public static class CosmosDbClientSetup
         }
     private static List<Room> SeedData()
     {
-        return new List<Room>
+        var room = new Room
         {
-            new()
-            {
-                Id = Guid.NewGuid(),
-                Name = "BootCampers",
-                DateCreated = DateTime.UtcNow.ToString(),
-                Chats = new List<Chat>
-                {
-                    new()
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "BootCampers",
-                        DateCreated = DateTime.UtcNow,
-                        Messages = new List<Message>
-                        {
-                            new()
-                            {
-                                Id = Guid.NewGuid(),
-                                DateCreated = DateTime.UtcNow,
-                                Description = "Well-come!"
-                            }
-                        }
-                    }
-                }
-            },
-            new()
-            {
-                Id = Guid.NewGuid(),
-                Name = "General",
-                DateCreated = DateTime.UtcNow.ToString(),
-                Chats = new List<Chat>
-                {
-                    new()
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "General",
-                        DateCreated = DateTime.UtcNow,
-                        Messages = new List<Message>
-                        {
-                            new()
-                            {
-                                Id = Guid.NewGuid(),
-                                DateCreated = DateTime.UtcNow,
-                                Description = "Hey there!"
-                            }
-                        }
-                    }
-                }
-            }
+            Id = Guid.NewGuid(),
+            Name = "BootCampers",
+            DateCreated = DateTime.UtcNow.ToString(),
+            Chats = new List<Chat>()
         };
+   
+        var chat = new Chat
+        {
+            Id = Guid.NewGuid(),
+            RoomId = room.Id,
+            Name = "BootCampers",
+            DateCreated = DateTime.UtcNow,
+            Messages = new List<Message>()
+        };
+
+        var chat2 = new Chat
+        {
+            Id = Guid.NewGuid(),
+            RoomId = room.Id,
+            Name = "Trainers",
+            DateCreated = DateTime.UtcNow,
+            Messages = new List<Message>()
+        };
+        
+        var message = new Message
+        {
+            Id = Guid.NewGuid(),
+            DateCreated = DateTime.UtcNow,
+            ChatId = chat.Id,
+            Description = "Well-come!"
+        }; 
+
+        var message2 = new Message
+        {
+            Id = Guid.NewGuid(),
+            DateCreated = DateTime.UtcNow,
+            ChatId = chat2.Id,
+            Description = "Hey there!"
+        }; 
+        
+        chat.Messages.Add(message);
+        chat2.Messages.Add(message2);
+        
+        room.Chats.Add(chat);   
+        room.Chats.Add(chat2);
+
+        var data = new List<Room> {room};
+        return data;
     }
 
 }

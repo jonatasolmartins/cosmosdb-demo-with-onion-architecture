@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ChatRoom.Rest.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/Rooms/[controller]")]
 [ApiController]
 public class ChatsController : ControllerBase
 {

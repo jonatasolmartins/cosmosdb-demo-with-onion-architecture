@@ -1,9 +1,8 @@
-using ChatRoom.SharedKernel.Interfaces;
 using Newtonsoft.Json;
 
 namespace ChatRoom.Core.Domain.Models;
 
-public class Room : IAggregateRoot
+public class Room
 {
     [JsonProperty(propertyName:"id")]
     public Guid Id { get; set; }

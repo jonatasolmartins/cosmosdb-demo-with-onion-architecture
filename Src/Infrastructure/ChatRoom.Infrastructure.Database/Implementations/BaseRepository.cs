@@ -1,8 +1,6 @@
-using ChatRoom.SharedKernel.Interfaces;
-
 namespace ChatRoom.Infrastructure.Database.Implementations;
 
-public class BaseRepository<T> : IBaseRepository<T> where T: class, IAggregateRoot
+public class BaseRepository<T>
 {
     public Task<List<T>> GetAll()
     {

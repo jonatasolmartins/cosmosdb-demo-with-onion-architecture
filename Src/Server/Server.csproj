@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Core\Application\ChatRoom.Core.Application.Services\ChatRoom.Core.Application.Services.csproj" />
       <ProjectReference Include="..\Infrastructure\ChatRoom.Infrastructure.Database\ChatRoom.Infrastructure.Database.csproj" />
       <ProjectReference Include="..\Presentation\ChatRoom.Rest.Api\ChatRoom.Rest.Api.csproj" />
     </ItemGroup>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gnAjPTEm1h7iNCcPuUhZV2Hkc54ie2ZJkQTaGBpfYyBzEm+KVGVlnoikuNSbDGiqRSHoGHJ9Y57l/TZk84WnkA==",
+  "dgSpecHash": "HBQ5esupE2Hz2FXG39O9N+KrAzgbrijKDgH7eeY1ron2VuZw/fjC+MuPZ/gCJWzaWFzIbg5XCPHUmtnlGC5j4g==",
   "success": true,
-  "projectFilePath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj",
+  "projectFilePath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj",
   "expectedPackageFiles": [
     "/Users/jonatasolmartins/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512"
   ],

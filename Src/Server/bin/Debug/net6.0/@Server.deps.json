@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "@Server/1.0.0": {
         "dependencies": {
+          "ChatRoom.Core.Application.Services": "1.0.0",
           "ChatRoom.Infrastructure.Database": "1.0.0",
           "ChatRoom.Rest.Api": "1.0.0",
           "Swashbuckle.AspNetCore": "6.3.1",
@@ -724,10 +725,19 @@
           }
         }
       },
+      "ChatRoom.Core.Application.Services/1.0.0": {
+        "dependencies": {
+          "ChatRoom.Core.Domain.Abstractions": "1.0.0",
+          "ChatRoom.Core.Domain.Models": "1.0.0",
+          "Microsoft.Azure.Cosmos": "3.27.2"
+        },
+        "runtime": {
+          "ChatRoom.Core.Application.Services.dll": {}
+        }
+      },
       "ChatRoom.Core.Domain.Abstractions/1.0.0": {
         "dependencies": {
-          "ChatRoom.Core.Domain.Models": "1.0.0",
-          "ChatRoom.SharedKernel": "1.0.0"
+          "ChatRoom.Core.Domain.Models": "1.0.0"
         },
         "runtime": {
           "ChatRoom.Core.Domain.Abstractions.dll": {}
@@ -735,7 +745,6 @@
       },
       "ChatRoom.Core.Domain.Models/1.0.0": {
         "dependencies": {
-          "ChatRoom.SharedKernel": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
@@ -749,11 +758,6 @@
         },
         "runtime": {
           "ChatRoom.Rest.Api.dll": {}
-        }
-      },
-      "ChatRoom.SharedKernel/1.0.0": {
-        "runtime": {
-          "ChatRoom.SharedKernel.dll": {}
         }
       },
       "ChatRoom.Infrastructure.Database.Reference/1.0.0.0": {
@@ -1395,6 +1399,11 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
+    "ChatRoom.Core.Application.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "ChatRoom.Core.Domain.Abstractions/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1406,11 +1415,6 @@
       "sha512": ""
     },
     "ChatRoom.Rest.Api/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ChatRoom.SharedKernel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

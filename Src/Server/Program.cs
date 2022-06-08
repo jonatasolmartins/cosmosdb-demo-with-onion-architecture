@@ -1,3 +1,4 @@
+using ChatRoom.Core.Application.Services.DependencyInjection;
 using ChatRoom.Infrastructure.Database.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDatabaseRepositories();
+builder.Services.AddApplicationServices();
 
 builder.Services.AddSwaggerGen(c =>
 {

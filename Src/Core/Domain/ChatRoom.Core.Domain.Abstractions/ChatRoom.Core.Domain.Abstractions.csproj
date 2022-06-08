@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\ChatRoom.SharedKernel\ChatRoom.SharedKernel.csproj" />
       <ProjectReference Include="..\ChatRoom.Core.Domain.Models\ChatRoom.Core.Domain.Models.csproj" />
     </ItemGroup>
 

@@ -273,8 +273,7 @@
       },
       "ChatRoom.Core.Domain.Abstractions/1.0.0": {
         "dependencies": {
-          "ChatRoom.Core.Domain.Models": "1.0.0",
-          "ChatRoom.SharedKernel": "1.0.0"
+          "ChatRoom.Core.Domain.Models": "1.0.0"
         },
         "runtime": {
           "ChatRoom.Core.Domain.Abstractions.dll": {}
@@ -282,16 +281,10 @@
       },
       "ChatRoom.Core.Domain.Models/1.0.0": {
         "dependencies": {
-          "ChatRoom.SharedKernel": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
           "ChatRoom.Core.Domain.Models.dll": {}
-        }
-      },
-      "ChatRoom.SharedKernel/1.0.0": {
-        "runtime": {
-          "ChatRoom.SharedKernel.dll": {}
         }
       }
     }
@@ -504,11 +497,6 @@
       "sha512": ""
     },
     "ChatRoom.Core.Domain.Models/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ChatRoom.SharedKernel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

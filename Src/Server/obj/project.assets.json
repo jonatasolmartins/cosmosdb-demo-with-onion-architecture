@@ -1217,12 +1217,26 @@
           }
         }
       },
+      "ChatRoom.Core.Application.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ChatRoom.Core.Domain.Abstractions": "1.0.0",
+          "ChatRoom.Core.Domain.Models": "1.0.0",
+          "Microsoft.Azure.Cosmos": "3.27.2"
+        },
+        "compile": {
+          "bin/placeholder/ChatRoom.Core.Application.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChatRoom.Core.Application.Services.dll": {}
+        }
+      },
       "ChatRoom.Core.Domain.Abstractions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "ChatRoom.Core.Domain.Models": "1.0.0",
-          "ChatRoom.SharedKernel": "1.0.0"
+          "ChatRoom.Core.Domain.Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ChatRoom.Core.Domain.Abstractions.dll": {}
@@ -1235,7 +1249,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "ChatRoom.SharedKernel": "1.0.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "compile": {
@@ -1273,16 +1286,6 @@
         },
         "runtime": {
           "bin/placeholder/ChatRoom.Rest.Api.dll": {}
-        }
-      },
-      "ChatRoom.SharedKernel/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/ChatRoom.SharedKernel.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ChatRoom.SharedKernel.dll": {}
         }
       }
     }
@@ -4310,6 +4313,11 @@
         "version.txt"
       ]
     },
+    "ChatRoom.Core.Application.Services/1.0.0": {
+      "type": "project",
+      "path": "../Core/Application/ChatRoom.Core.Application.Services/ChatRoom.Core.Application.Services.csproj",
+      "msbuildProject": "../Core/Application/ChatRoom.Core.Application.Services/ChatRoom.Core.Application.Services.csproj"
+    },
     "ChatRoom.Core.Domain.Abstractions/1.0.0": {
       "type": "project",
       "path": "../Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj",
@@ -4329,15 +4337,11 @@
       "type": "project",
       "path": "../Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj",
       "msbuildProject": "../Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj"
-    },
-    "ChatRoom.SharedKernel/1.0.0": {
-      "type": "project",
-      "path": "../ChatRoom.SharedKernel/ChatRoom.SharedKernel.csproj",
-      "msbuildProject": "../ChatRoom.SharedKernel/ChatRoom.SharedKernel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "ChatRoom.Core.Application.Services >= 1.0.0",
       "ChatRoom.Infrastructure.Database >= 1.0.0",
       "ChatRoom.Rest.Api >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.3.1"
@@ -4349,11 +4353,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/Server.csproj",
+      "projectUniqueName": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/Server.csproj",
       "projectName": "@Server",
-      "projectPath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/Server.csproj",
+      "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/Server.csproj",
       "packagesPath": "/Users/jonatasolmartins/.nuget/packages/",
-      "outputPath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/obj/",
+      "outputPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/jonatasolmartins/.nuget/NuGet/NuGet.Config"
@@ -4368,11 +4372,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj": {
-              "projectPath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj"
+            "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Application/ChatRoom.Core.Application.Services/ChatRoom.Core.Application.Services.csproj": {
+              "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Application/ChatRoom.Core.Application.Services/ChatRoom.Core.Application.Services.csproj"
             },
-            "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj": {
-              "projectPath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj"
+            "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj": {
+              "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj"
+            },
+            "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj": {
+              "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj"
             }
           }
         }

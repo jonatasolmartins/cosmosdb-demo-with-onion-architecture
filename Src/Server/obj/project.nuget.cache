@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IhFnpjE+hv/F3VJHJw2j1UW2yiEUmfZAbtuudz/4Dla8F7dHG+6Qo+PjLSH8fIS+48DEVrvRapcVPnKvbizRxg==",
+  "dgSpecHash": "dGOIntBoVfoIcl8DQLMDbMGIcCE+VI2EHXrIWTweE9TOmuoDgblFLCuSXaBTUk1r5eZTsDS/syhEbS+6LRs/7A==",
   "success": true,
-  "projectFilePath": "/Users/jonatasolmartins/RiderProjects/ChatRoom.BootCamp.Api/Src/Server/Server.csproj",
+  "projectFilePath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/Server.csproj",
   "expectedPackageFiles": [
     "/Users/jonatasolmartins/.nuget/packages/azure.core/1.19.0/azure.core.1.19.0.nupkg.sha512",
     "/Users/jonatasolmartins/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

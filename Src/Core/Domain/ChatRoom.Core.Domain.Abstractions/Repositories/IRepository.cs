@@ -1,9 +1,8 @@
 using ChatRoom.Core.Domain.Models;
-using ChatRoom.SharedKernel.Interfaces;
 
 namespace ChatRoom.Core.Domain.Abstractions.Repositories;
 
-public interface IRepository  :  IAggregateRoot
+public interface IRepository
 {
     Task<List<Room>> GetAll();
     Task<Room> GetById(Guid id);

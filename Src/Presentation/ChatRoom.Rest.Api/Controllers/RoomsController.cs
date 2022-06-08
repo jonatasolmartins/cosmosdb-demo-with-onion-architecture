@@ -14,7 +14,7 @@ public class RoomsController : ControllerBase
     {
         _roomRepository = repository;
     }
-
+    
     [HttpGet]
     [Produces(typeof(List<Room>))]
     public async Task<IActionResult> GetAll()
