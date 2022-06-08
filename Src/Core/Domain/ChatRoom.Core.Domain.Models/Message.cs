@@ -7,6 +7,7 @@ public class Message
     [JsonProperty(propertyName:"id")]
     public Guid Id { get; set; }
 
+    public Guid RoomId { get; set; }
     public Guid ChatId { get; set; }
     
     [JsonProperty(PropertyName = "dateCreated")]

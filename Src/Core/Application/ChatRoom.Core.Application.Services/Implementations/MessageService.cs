@@ -9,22 +9,19 @@ namespace ChatRoom.Core.Application.Services.Implementations;
 public class MessageService : IMessageService
 {
     private readonly Container _messageContainer;
-    private readonly Container _roomContainer;
     public MessageService(CosmosClient cosmosClient, IConfiguration configuration)
     {
-        var configurationSection = configuration.GetSection("CosmosConnection");
-        string databaseName = configurationSection.GetSection("DatabaseName").Value;
+        var databaseName = configuration.GetSection("ConnectionStrings:DatabaseName").Value;
         _messageContainer = cosmosClient.GetContainer(databaseName, "Message");
-        _roomContainer = cosmosClient.GetContainer(databaseName, "Room");
     }
-    public async Task<bool> CreateMessage(Message newMessage, Guid roomId)
+    public async Task<bool> CreateMessage(Message newMessage)
     {
-        return await UpsertMessage(newMessage, roomId);
+        return await UpsertMessage(newMessage);
     }
 
     public async Task<bool> UpdateMessage(Message message, Guid roomId)
     {
-        return await UpsertMessage(message, roomId);
+        return await UpsertMessage(message);
     }
 
     public async Task<bool> DeleteMessage(Guid id)
@@ -33,14 +30,9 @@ public class MessageService : IMessageService
          return response.StatusCode == HttpStatusCode.OK;
     }
 
-    private async Task<bool> UpsertMessage(Message message, Guid roomId)
+    private async Task<bool> UpsertMessage(Message message)
     {
         var response = await _messageContainer.UpsertItemAsync<Message>(message, new PartitionKey(message.Id.ToString()));
-        if (response.StatusCode != HttpStatusCode.Created) return false;
-        
-        var obj = new dynamic[] { message.ChatId.ToString(), message };
-        var responseSp = await _roomContainer.Scripts.ExecuteStoredProcedureAsync<string>("updateMessage", new PartitionKey(roomId.ToString()), obj);
-        return responseSp.StatusCode == HttpStatusCode.OK;
-
+        return response.StatusCode == HttpStatusCode.Created;
     }
 }

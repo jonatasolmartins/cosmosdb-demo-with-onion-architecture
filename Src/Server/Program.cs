@@ -1,11 +1,13 @@
 using ChatRoom.Core.Application.Services.DependencyInjection;
+using ChatRoom.Infrastructure.Database.AppSettings;
 using ChatRoom.Infrastructure.Database.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-
+builder.Services.AddSingleton(builder.Configuration.GetSection("ConnectionStrings").Get<CosmoDbSettings>());
 builder.Services.AddDatabaseRepositories();
+
 builder.Services.AddApplicationServices();
 
 builder.Services.AddSwaggerGen(c =>

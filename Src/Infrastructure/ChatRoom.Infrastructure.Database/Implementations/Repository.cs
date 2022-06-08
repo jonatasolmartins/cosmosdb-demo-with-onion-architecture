@@ -1,5 +1,6 @@
 using ChatRoom.Core.Domain.Abstractions.Repositories;
 using ChatRoom.Core.Domain.Models;
+using ChatRoom.Infrastructure.Database.AppSettings;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Configuration;
 
@@ -9,11 +10,9 @@ public class Repository  : IRepository
 {
     private readonly Container _roomContainer;
 
-    public Repository(CosmosClient cosmosClient, IConfiguration configuration)
+    public Repository(CosmosClient cosmosClient, CosmoDbSettings cosmoDbSettings)
     {
-        var configurationSection = configuration.GetSection("CosmosConnection");
-        string databaseName = configurationSection.GetSection("DatabaseName").Value;
-        _roomContainer = cosmosClient.GetContainer(databaseName, "Room");
+        _roomContainer = cosmosClient.GetContainer(cosmoDbSettings.DatabaseName, "Room");
     }
 
     public async Task<List<Room>> GetAll()
@@ -65,6 +64,12 @@ public class Repository  : IRepository
     public async Task<bool> Delete(Guid id)
     {
         return await Task.FromResult(true);
+    }
+
+    public async Task<string> UpdateRecentMessage(Message message)
+    {
+        var obj = new dynamic[] { message.ChatId.ToString(), message };
+        return await _roomContainer.Scripts.ExecuteStoredProcedureAsync<string>("updateMessage", new PartitionKey(message.RoomId.ToString()), obj);
     }
     
 }

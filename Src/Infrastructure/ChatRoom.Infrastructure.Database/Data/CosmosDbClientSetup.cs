@@ -1,33 +1,30 @@
 using ChatRoom.Core.Domain.Models;
+using ChatRoom.Infrastructure.Database.AppSettings;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Cosmos.Fluent;
 using Microsoft.Azure.Cosmos.Scripts;
-using Microsoft.Extensions.Configuration;
 
 namespace ChatRoom.Infrastructure.Database.Data;
 
-public static class CosmosDbClientSetup
+public class CosmosDbClientSetup
 {
     private const string PathToFileJs =
         @"../../../..//Infrastructure/ChatRoom.Infrastructure.Database/Data/";
     
-    public static async Task<CosmosClient> Setup(IConfigurationSection configurationSection)
+    public static async Task<CosmosClient> Setup(CosmoDbSettings cosmoDbSettings)
     {
-        var databaseName = configurationSection.GetSection("DatabaseName").Value;
-        var key = configurationSection.GetSection("Key").Value;
-        var accountEndPoint = configurationSection.GetSection("Account").Value;
-        
-        CosmosClientBuilder clientBuilder = new CosmosClientBuilder(accountEndPoint, key);
+
+        CosmosClientBuilder clientBuilder = new CosmosClientBuilder(cosmoDbSettings.AccountEndpointUrl, cosmoDbSettings.PrimaryKey);
         
         CosmosClient client = clientBuilder
-            .WithApplicationName(databaseName)
+            .WithApplicationName(cosmoDbSettings.DatabaseName)
             .WithApplicationName(Regions.EastUS)
             .WithConnectionModeDirect()
             .WithSerializerOptions(new CosmosSerializationOptions()
                 {PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase})
             .Build();
 
-        Microsoft.Azure.Cosmos.Database database =  client.CreateDatabaseIfNotExistsAsync(databaseName).Result;
+        Microsoft.Azure.Cosmos.Database database =  client.CreateDatabaseIfNotExistsAsync(cosmoDbSettings.DatabaseName).Result;
 
         var roomContainerProperties = new ContainerProperties()
         {
@@ -35,7 +32,7 @@ public static class CosmosDbClientSetup
             PartitionKeyPath = "/id"
         };
 
-        Container roomContainer =  database.CreateContainerIfNotExistsAsync(roomContainerProperties).Result;
+        Container roomContainer = await  database.CreateContainerIfNotExistsAsync(roomContainerProperties);
         
         var messageContainerProperties = new ContainerProperties()
         {
@@ -48,9 +45,9 @@ public static class CosmosDbClientSetup
             _ = await roomContainer.CreateItemAsync(room);
         }
         
-        _ =  database.CreateContainerIfNotExistsAsync(messageContainerProperties).Result;
-        await CreateUserDefinedFunction(roomContainer, $"{PathToFileJs}{configurationSection.GetSection("udf_convertDate").Value}");
-        await UpsertStoredProcedureAsync(roomContainer, $"{PathToFileJs}{configurationSection.GetSection("sp_updateMessage").Value}");
+        await database.CreateContainerIfNotExistsAsync(messageContainerProperties);
+        await CreateUserDefinedFunction(roomContainer, $"{PathToFileJs}{cosmoDbSettings.UdfConvertDate}");
+        await UpsertStoredProcedureAsync(roomContainer, $"{PathToFileJs}{cosmoDbSettings.ProcUpdateMessage}");
         return client;
     }
     
@@ -99,7 +96,7 @@ public static class CosmosDbClientSetup
         var scriptId = Path.GetFileNameWithoutExtension(scriptFilePath);
         if (await StoredProcedureExists(container, scriptId))
         {
-            await container.Scripts.ReplaceStoredProcedureAsync(new StoredProcedureProperties(scriptId, File.ReadAllText(scriptFilePath)));
+            //await container.Scripts.ReplaceStoredProcedureAsync(new StoredProcedureProperties(scriptId, File.ReadAllText(scriptFilePath)));
         }
         else
         {
@@ -158,7 +155,7 @@ public static class CosmosDbClientSetup
         var room = new Room
         {
             Id = Guid.NewGuid(),
-            Name = "BootCampers",
+            Name = "Latam",
             DateCreated = DateTime.UtcNow.ToString(),
             Chats = new List<Chat>()
         };
@@ -167,7 +164,7 @@ public static class CosmosDbClientSetup
         {
             Id = Guid.NewGuid(),
             RoomId = room.Id,
-            Name = "BootCampers",
+            Name = "Latam",
             DateCreated = DateTime.UtcNow,
             Messages = new List<Message>()
         };
@@ -176,7 +173,7 @@ public static class CosmosDbClientSetup
         {
             Id = Guid.NewGuid(),
             RoomId = room.Id,
-            Name = "Trainers",
+            Name = "Brazil",
             DateCreated = DateTime.UtcNow,
             Messages = new List<Message>()
         };
@@ -186,6 +183,7 @@ public static class CosmosDbClientSetup
             Id = Guid.NewGuid(),
             DateCreated = DateTime.UtcNow,
             ChatId = chat.Id,
+            RoomId = room.Id,
             Description = "Well-come!"
         }; 
 
@@ -194,6 +192,7 @@ public static class CosmosDbClientSetup
             Id = Guid.NewGuid(),
             DateCreated = DateTime.UtcNow,
             ChatId = chat2.Id,
+            RoomId = room.Id,
             Description = "Hey there!"
         }; 
         

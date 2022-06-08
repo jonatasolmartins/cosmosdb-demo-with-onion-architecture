@@ -23,11 +23,12 @@ public class MessagesController : ControllerBase
         {
             Id = Guid.NewGuid(),
             ChatId = newMessage.ChatId,
+            RoomId = newMessage.RoomId,
             DateCreated = DateTime.UtcNow,
             Description = newMessage.Content
         };
         
-        var result = await _messageService.CreateMessage(message, newMessage.RoomId);
+        var result = await _messageService.CreateMessage(message);
         if (!result) return BadRequest();
         
         return Ok();
