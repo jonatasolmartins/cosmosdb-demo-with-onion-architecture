@@ -34,6 +34,14 @@ public class CosmosDbClientSetup
 
         Container roomContainer = await  database.CreateContainerIfNotExistsAsync(roomContainerProperties);
         
+        var userContainerProperties = new ContainerProperties()
+        {
+            Id = "User",
+            PartitionKeyPath = "/email"
+        };
+        
+        Container userContainer = await  database.CreateContainerIfNotExistsAsync(userContainerProperties);
+        
         var messageContainerProperties = new ContainerProperties()
         {
             Id = "Message",
@@ -121,35 +129,33 @@ public class CosmosDbClientSetup
     }
 
 
-        private static async Task UpsertTriggerAsync(Container container, string scriptFileName, TriggerOperation triggerOperation, TriggerType triggerType)
+    private static async Task UpsertTriggerAsync(Container container, string scriptFileName, TriggerOperation triggerOperation, TriggerType triggerType)
+    {
+        string scriptId = Path.GetFileNameWithoutExtension(scriptFileName);
+        if (await TriggerExists(container, scriptId))
         {
-            string scriptId = Path.GetFileNameWithoutExtension(scriptFileName);
-            if (await TriggerExists(container, scriptId))
-            {
-                await container.Scripts.ReplaceTriggerAsync(new TriggerProperties { Id = scriptId, Body = File.ReadAllText(scriptFileName), TriggerOperation = triggerOperation, TriggerType = triggerType });
-            }
-            else
-            {
-                await container.Scripts.CreateTriggerAsync(new TriggerProperties { Id = scriptId, Body = File.ReadAllText(scriptFileName), TriggerOperation = triggerOperation, TriggerType = triggerType });
-            }
-
+            await container.Scripts.ReplaceTriggerAsync(new TriggerProperties { Id = scriptId, Body = File.ReadAllText(scriptFileName), TriggerOperation = triggerOperation, TriggerType = triggerType });
         }
-
-
-        private static async Task<bool> TriggerExists(Container container, string sprocId)
+        else
         {
-            Scripts cosmosScripts = container.Scripts;
+            await container.Scripts.CreateTriggerAsync(new TriggerProperties { Id = scriptId, Body = File.ReadAllText(scriptFileName), TriggerOperation = triggerOperation, TriggerType = triggerType });
+        } 
+    }
+    
+    private static async Task<bool> TriggerExists(Container container, string sprocId)
+    {
+        Scripts cosmosScripts = container.Scripts;
 
-            try
-            {
-                TriggerResponse trigger = await cosmosScripts.ReadTriggerAsync(sprocId);
-                return true;
-            }
-            catch (CosmosException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
-            {
-                return false;
-            }
+        try
+        {
+            TriggerResponse trigger = await cosmosScripts.ReadTriggerAsync(sprocId); 
+            return true;
         }
+        catch (CosmosException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            return false;
+        }
+    }
     private static List<Room> SeedData()
     {
         var room = new Room
@@ -184,7 +190,14 @@ public class CosmosDbClientSetup
             DateCreated = DateTime.UtcNow,
             ChatId = chat.Id,
             RoomId = room.Id,
-            Description = "Well-come!"
+            Description = "Well-come!",
+            User = new ChatRoom.Core.Domain.Models.User()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Pedro",
+                Email = "pedro@email.com",
+                Avatar = "/image/1"
+            }
         }; 
 
         var message2 = new Message
@@ -193,7 +206,14 @@ public class CosmosDbClientSetup
             DateCreated = DateTime.UtcNow,
             ChatId = chat2.Id,
             RoomId = room.Id,
-            Description = "Hey there!"
+            Description = "Hey there!",
+            User = new ChatRoom.Core.Domain.Models.User()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Tiago",
+                Email = "tiago@email.com",
+                Avatar = "/image/2"
+            }
         }; 
         
         chat.Messages.Add(message);

@@ -25,7 +25,12 @@ public class MessagesController : ControllerBase
             ChatId = newMessage.ChatId,
             RoomId = newMessage.RoomId,
             DateCreated = DateTime.UtcNow,
-            Description = newMessage.Content
+            Description = newMessage.Content,
+            User = new User()
+            {
+                Id = newMessage.User.Id,
+                Email = newMessage.User.Email
+            }
         };
         
         var result = await _messageService.CreateMessage(message);

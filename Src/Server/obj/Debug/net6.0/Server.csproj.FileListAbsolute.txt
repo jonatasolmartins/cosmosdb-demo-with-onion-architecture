@@ -183,3 +183,11 @@
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/obj/Debug/net6.0/@Server.pdb
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/obj/Debug/net6.0/Server.genruntimeconfig.cache
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/obj/Debug/net6.0/ref/@Server.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Azure.Storage.Common.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Azure.Storage.Queues.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/System.IO.Hashing.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll

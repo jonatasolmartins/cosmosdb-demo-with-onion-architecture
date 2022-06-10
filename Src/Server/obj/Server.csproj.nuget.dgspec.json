@@ -45,9 +45,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Azure.Storage.Queues": {
+              "target": "Package",
+              "version": "[12.10.0, )"
+            },
             "Microsoft.Azure.Cosmos": {
               "target": "Package",
               "version": "[3.27.2, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0-preview.4.22229.4, )"
             }
           },
           "imports": [
