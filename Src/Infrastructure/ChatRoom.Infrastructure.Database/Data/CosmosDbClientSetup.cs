@@ -1,8 +1,10 @@
+using System.Net;
 using ChatRoom.Core.Domain.Models;
 using ChatRoom.Infrastructure.Database.AppSettings;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Cosmos.Fluent;
 using Microsoft.Azure.Cosmos.Scripts;
+using User = ChatRoom.Core.Domain.Models.User;
 
 namespace ChatRoom.Infrastructure.Database.Data;
 
@@ -39,23 +41,29 @@ public class CosmosDbClientSetup
             Id = "User",
             PartitionKeyPath = "/email"
         };
-        
-        Container userContainer = await  database.CreateContainerIfNotExistsAsync(userContainerProperties);
+
+        Container _userContainer = await database.CreateContainerIfNotExistsAsync(userContainerProperties);
         
         var messageContainerProperties = new ContainerProperties()
         {
             Id = "Message",
-            PartitionKeyPath = "/id"
+            PartitionKeyPath = "/partitionKey"
         };
 
-        foreach (var room in SeedData())
-        {
-            _ = await roomContainer.CreateItemAsync(room);
-        }
+        Container _messageContainer = await database.CreateContainerIfNotExistsAsync(messageContainerProperties);
+
+
+        var (room, messages, user) = SeedData();
+
+        _ = await roomContainer.CreateItemAsync(room);
+        _ = await _messageContainer.CreateItemAsync(messages.First());
+        _ = await _messageContainer.CreateItemAsync(messages.Last());
+        _ = await _userContainer.CreateItemAsync(user);
         
-        await database.CreateContainerIfNotExistsAsync(messageContainerProperties);
         await CreateUserDefinedFunction(roomContainer, $"{PathToFileJs}{cosmoDbSettings.UdfConvertDate}");
         await UpsertStoredProcedureAsync(roomContainer, $"{PathToFileJs}{cosmoDbSettings.ProcUpdateMessage}");
+        await UpsertStoredProcedureAsync(roomContainer, $"{PathToFileJs}{cosmoDbSettings.ProcUpdateUserAvatar}");
+        
         return client;
     }
     
@@ -151,13 +159,15 @@ public class CosmosDbClientSetup
             TriggerResponse trigger = await cosmosScripts.ReadTriggerAsync(sprocId); 
             return true;
         }
-        catch (CosmosException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
+        catch (CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
         {
             return false;
         }
     }
-    private static List<Room> SeedData()
+
+    private static ValueTuple<Room, List<Message>, User> SeedData()
     {
+
         var room = new Room
         {
             Id = Guid.NewGuid(),
@@ -165,7 +175,7 @@ public class CosmosDbClientSetup
             DateCreated = DateTime.UtcNow.ToString(),
             Chats = new List<Chat>()
         };
-   
+
         var chat = new Chat
         {
             Id = Guid.NewGuid(),
@@ -183,22 +193,27 @@ public class CosmosDbClientSetup
             DateCreated = DateTime.UtcNow,
             Messages = new List<Message>()
         };
-        
+
+        var user = new User
+        {
+            Id = Guid.NewGuid(),
+            Name = "Tiago",
+            Email = "tiago@email.com",
+            Avatar = "/image/2"
+        };
+
         var message = new Message
         {
             Id = Guid.NewGuid(),
             DateCreated = DateTime.UtcNow,
             ChatId = chat.Id,
             RoomId = room.Id,
-            Description = "Well-come!",
-            User = new ChatRoom.Core.Domain.Models.User()
-            {
-                Id = Guid.NewGuid(),
-                Name = "Pedro",
-                Email = "pedro@email.com",
-                Avatar = "/image/1"
-            }
-        }; 
+            Content = "Well-come!",
+            User = user,
+            PartitionKey = user.Email
+        };
+
+
 
         var message2 = new Message
         {
@@ -206,24 +221,18 @@ public class CosmosDbClientSetup
             DateCreated = DateTime.UtcNow,
             ChatId = chat2.Id,
             RoomId = room.Id,
-            Description = "Hey there!",
-            User = new ChatRoom.Core.Domain.Models.User()
-            {
-                Id = Guid.NewGuid(),
-                Name = "Tiago",
-                Email = "tiago@email.com",
-                Avatar = "/image/2"
-            }
-        }; 
-        
+            Content = "Hey there!",
+            User = user,
+            PartitionKey = user.Email
+        };
+
         chat.Messages.Add(message);
         chat2.Messages.Add(message2);
-        
-        room.Chats.Add(chat);   
+
+        room.Chats.Add(chat);
         room.Chats.Add(chat2);
 
-        var data = new List<Room> {room};
-        return data;
+        return new ValueTuple<Room, List<Message>, User>(room, new List<Message> {message, message2}, user);
     }
 
 }

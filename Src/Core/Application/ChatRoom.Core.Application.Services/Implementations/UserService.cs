@@ -28,8 +28,16 @@ public class UserService : IUserService
 
     public async Task<bool> UpdateAvatar(User user)
     {
-        var response = await _userContainer.UpsertItemAsync<User>(user, new PartitionKey(user.Email.ToString()));
-        if (response.StatusCode != HttpStatusCode.Created) return false;
+        var response = await _userContainer.PatchItemAsync<User>(
+            user.Id.ToString(),
+            new PartitionKey(user.Email),
+            new[]
+            {
+                PatchOperation.Replace("/avatar", user.Avatar)
+            });
+
+
+        if (response.StatusCode != HttpStatusCode.OK) return false;
         
         var data = JsonConvert.SerializeObject(user);
         await _queueClient.SendMessageAsync(data);

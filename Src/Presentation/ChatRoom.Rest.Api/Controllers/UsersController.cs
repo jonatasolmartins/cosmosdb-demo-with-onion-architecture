@@ -20,11 +20,29 @@ public class UsersController : ControllerBase
         var user = new User()
         {
             Id = Guid.NewGuid(),
+            Name = userMessage.Name,
             Email = userMessage.Email,
             Avatar = userMessage.Avatar
         };
 
         var result = await _userService.Create(user);
+        if (!result) return BadRequest();
+
+        return Ok();
+    }
+
+    [HttpPut("UpdateAvatar")]
+    public async Task<IActionResult> UpdateAvatar(UserMessage userMessage)
+    {
+        var user = new User
+        {
+            Id = userMessage.Id,
+            Name = userMessage.Name,
+            Email = userMessage.Email,
+            Avatar = userMessage.Avatar
+        };
+
+        var result = await _userService.UpdateAvatar(user);
         if (!result) return BadRequest();
         
         return Ok();

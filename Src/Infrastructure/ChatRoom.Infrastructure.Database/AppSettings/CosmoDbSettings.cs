@@ -16,9 +16,14 @@ public class CosmoDbSettings
     /// </summary>
     public string AccountConnectionString { get; set; }
     /// <summary>
-    ///  Stiored Procedure UpdateMessage
+    ///  Stored Procedure UpdateMessage
     /// </summary>
     public string ProcUpdateMessage { get; set; }
+
+    /// <summary>
+    ///     Stored Procedure UpdateUserAvatar
+    /// </summary>
+    public string ProcUpdateUserAvatar { get; set; }
     /// <summary>
     ///  User defined Function ConvertDate
     /// </summary>

@@ -1,5 +1,6 @@
-using System.Threading.Tasks;
 using System;
+using System.Threading.Tasks;
+using ChatRoom.Core.Domain.Abstractions.Services;
 using ChatRoom.Core.Domain.Models;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
@@ -9,6 +10,12 @@ namespace ChatRoom.UserFunction;
 
 public class UpdateUserAvatar
 {
+    private readonly IMessageService _messageService;
+
+    public UpdateUserAvatar(IMessageService messageService)
+    {
+        _messageService = messageService;
+    }
 
     [FunctionName("UpdateUserAvatar")]
     public async Task RunAsync([QueueTrigger("update-avatar", Connection = "QueueConnection")] string myQueueItem, ILogger log)
@@ -18,9 +25,7 @@ public class UpdateUserAvatar
             if (myQueueItem != null)
             {
                 var user = JsonConvert.DeserializeObject<User>(myQueueItem);
-                //TODO: Update the user document inside message container
-                // As we keep only the first 3 message in the message array in room container we don't need to update that,
-                // it will soon be delete from container to give place to a new message.
+                await _messageService.UpdateMessageUserAvatar(user);
             }
         }
         catch (Exception e)

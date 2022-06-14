@@ -1,4 +1,5 @@
 using Azure.Storage.Queues;
+using ChatRoom.Core.Domain.Abstractions.Services;
 using ChatRoom.Core.Domain.Models;
 using Newtonsoft.Json;
 
@@ -7,10 +8,12 @@ namespace ChatRoom.Core.Application.Services.BackgroundService;
 public class MessageProcessor: Microsoft.Extensions.Hosting.BackgroundService
 {
     private readonly QueueClient _queueClient;
-    
-    public MessageProcessor(QueueClient queueClient)
+    private readonly IMessageService _messageService;
+
+    public MessageProcessor(QueueClient queueClient, IMessageService messageService)
     {
         _queueClient = queueClient;
+        _messageService = messageService;
     }
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -22,9 +25,7 @@ public class MessageProcessor: Microsoft.Extensions.Hosting.BackgroundService
                 if (message.Value != null)
                 {
                     var user = JsonConvert.DeserializeObject<User>(message.Value.MessageText);
-                    //TODO: Update the user document inside message container
-                    // As we keep only the first 3 message in the message array in room container we don't need to update that,
-                    // it will soon be delete from container to give place to a new message.
+                    await _messageService.UpdateMessageUserAvatar(user);
                     await _queueClient.DeleteMessageAsync(message.Value.MessageId, message.Value.PopReceipt, stoppingToken);
                 }
             }
@@ -33,8 +34,8 @@ public class MessageProcessor: Microsoft.Extensions.Hosting.BackgroundService
                 Console.WriteLine(e);
                 throw;
             }
-            
-            await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
+
+            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
         }
         
     }
