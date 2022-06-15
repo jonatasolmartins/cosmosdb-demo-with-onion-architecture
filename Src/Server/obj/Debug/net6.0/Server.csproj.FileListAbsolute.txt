@@ -130,6 +130,8 @@
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/@Server.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/@Server.pdb
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Azure.Core.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Azure.Storage.Common.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Azure.Storage.Queues.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Azure.Cosmos.Client.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Azure.Cosmos.Core.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Azure.Cosmos.Direct.dll
@@ -137,7 +139,12 @@
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Bcl.HashCode.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.OpenApi.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Newtonsoft.Json.dll
@@ -146,6 +153,7 @@
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/System.Drawing.Common.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/System.IO.Hashing.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/System.Memory.Data.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/System.Security.Permissions.dll
@@ -183,11 +191,4 @@
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/obj/Debug/net6.0/@Server.pdb
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/obj/Debug/net6.0/Server.genruntimeconfig.cache
 /Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/obj/Debug/net6.0/ref/@Server.dll
-/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Azure.Storage.Common.dll
-/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Azure.Storage.Queues.dll
-/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/System.IO.Hashing.dll
-/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
-/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
-/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
-/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.Hosting.Abstractions.dll
-/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/bin/Debug/net6.0/Azure.Storage.Blobs.dll

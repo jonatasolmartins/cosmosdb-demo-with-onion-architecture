@@ -53,16 +53,16 @@ public class CosmosDbClientSetup
         Container _messageContainer = await database.CreateContainerIfNotExistsAsync(messageContainerProperties);
 
 
-        var (room, messages, user) = SeedData();
+        /*var (room, messages, user) = SeedData();
 
         _ = await roomContainer.CreateItemAsync(room);
         _ = await _messageContainer.CreateItemAsync(messages.First());
         _ = await _messageContainer.CreateItemAsync(messages.Last());
-        _ = await _userContainer.CreateItemAsync(user);
-        
-        await CreateUserDefinedFunction(roomContainer, $"{PathToFileJs}{cosmoDbSettings.UdfConvertDate}");
-        await UpsertStoredProcedureAsync(roomContainer, $"{PathToFileJs}{cosmoDbSettings.ProcUpdateMessage}");
-        await UpsertStoredProcedureAsync(roomContainer, $"{PathToFileJs}{cosmoDbSettings.ProcUpdateUserAvatar}");
+        _ = await _userContainer.CreateItemAsync(user);*/
+
+        //await CreateUserDefinedFunction(roomContainer, $"{PathToFileJs}{cosmoDbSettings.UdfConvertDate}");
+        //await UpsertStoredProcedureAsync(roomContainer, $"{PathToFileJs}{cosmoDbSettings.ProcUpdateMessage}");
+        //await UpsertStoredProcedureAsync(roomContainer, $"{PathToFileJs}{cosmoDbSettings.ProcUpdateUserAvatar}");
         
         return client;
     }
@@ -193,13 +193,13 @@ public class CosmosDbClientSetup
             DateCreated = DateTime.UtcNow,
             Messages = new List<Message>()
         };
-
+      
         var user = new User
         {
             Id = Guid.NewGuid(),
-            Name = "Tiago",
-            Email = "tiago@email.com",
-            Avatar = "/image/2"
+            Name = "Jonatas Martins",
+            Email = "jonatas@email",
+            Avatar = "https://azqueue.blob.core.windows.net/useravatar/jonatas%40email.jpg"
         };
 
         var message = new Message

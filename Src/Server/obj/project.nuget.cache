@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ucANT+spEThS3xkQNFgY6z9lPU5IZXxbF+N8FND9/So//c5OFj7ld9H8wXWXHxv8kG/qHbJwezYVwP2UO+j5zg==",
+  "dgSpecHash": "0M2uDwhxrRt+Z/2TNo+NHN6S47anyVrj8iLBg56AE4+Yb4QtpyY6wCXyZUjqrbZKGT6geIxHSakfwYYe7R6H9w==",
   "success": true,
   "projectFilePath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/Server.csproj",
   "expectedPackageFiles": [
     "/Users/jonatasolmartins/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
+    "/Users/jonatasolmartins/.nuget/packages/azure.storage.blobs/12.12.0/azure.storage.blobs.12.12.0.nupkg.sha512",
     "/Users/jonatasolmartins/.nuget/packages/azure.storage.common/12.11.0/azure.storage.common.12.11.0.nupkg.sha512",
     "/Users/jonatasolmartins/.nuget/packages/azure.storage.queues/12.10.0/azure.storage.queues.12.10.0.nupkg.sha512",
     "/Users/jonatasolmartins/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

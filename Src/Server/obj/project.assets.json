@@ -20,6 +20,19 @@
           "lib/net5.0/Azure.Core.dll": {}
         }
       },
+      "Azure.Storage.Blobs/12.12.0": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Storage.Common": "12.11.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Storage.Blobs.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Storage.Blobs.dll": {}
+        }
+      },
       "Azure.Storage.Common/12.11.0": {
         "type": "package",
         "dependencies": {
@@ -1317,6 +1330,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Azure.Storage.Blobs": "12.12.0",
           "ChatRoom.Core.Domain.Abstractions": "1.0.0",
           "Microsoft.Azure.Cosmos": "3.27.2",
           "Microsoft.Extensions.Configuration.Abstractions": "2.2.0",
@@ -1366,6 +1380,22 @@
         "lib/netcoreapp2.1/Azure.Core.xml",
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml"
+      ]
+    },
+    "Azure.Storage.Blobs/12.12.0": {
+      "sha512": "DYirbNIkP2KeCz+/7AP9Un8GkrmSfHSSE+J0k4pyIlI5d8wVWndZj5Pp74rNsgjE/jDRdr3dIhJHPQwHE4ifAg==",
+      "type": "package",
+      "path": "azure.storage.blobs/12.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.storage.blobs.12.12.0.nupkg.sha512",
+        "azure.storage.blobs.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.Storage.Blobs.dll",
+        "lib/netstandard2.0/Azure.Storage.Blobs.xml"
       ]
     },
     "Azure.Storage.Common/12.11.0": {

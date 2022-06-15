@@ -1,8 +1,5 @@
-using Azure.Storage.Queues;
-using ChatRoom.Core.Application.Services.BackgroundService;
 using ChatRoom.Core.Application.Services.Implementations;
 using ChatRoom.Core.Domain.Abstractions.Services;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ChatRoom.Core.Application.Services.DependencyInjection;
@@ -12,9 +9,9 @@ public static  class ServiceCollectionExtensions
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         services.AddSingleton(typeof(IMessageService), typeof(MessageService));
-        services.AddScoped(typeof(IUserService), typeof(UserService));
+        services.AddSingleton(typeof(IUserService), typeof(UserService));
 
-        services.AddSingleton(s =>
+        /*services.AddSingleton(s =>
         {
             var configuration = s.GetService<IConfiguration>();
 
@@ -23,6 +20,7 @@ public static  class ServiceCollectionExtensions
         });
         
         services.AddHostedService<MessageProcessor>();
+        */
         return services;
     }
     
