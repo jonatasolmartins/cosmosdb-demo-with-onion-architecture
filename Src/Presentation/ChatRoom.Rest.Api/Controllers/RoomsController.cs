@@ -19,18 +19,11 @@ public class RoomsController : ControllerBase
     [Produces(typeof(List<Room>))]
     public async Task<IActionResult> GetAll()
     {
-        try
-        {
-            var result = await _roomRepository.GetAll();
-            if (result == null) NoContent();
-            
-            return Ok(result);
-        }
-        catch (Exception e)
-        {
-            return StatusCode(500, e.Message);
-        }
-      
+        var result = await _roomRepository.GetAll();
+        if (result == null) NoContent();
+
+        return Ok(result);
+
     }
 
     [HttpGet("{id}")]
@@ -45,6 +38,7 @@ public class RoomsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(RoomForCreate newRoomForCreate)
     {
+        //TODO use auto Mapper instead
         var room = new Room()
         {
             Id = Guid.NewGuid(),

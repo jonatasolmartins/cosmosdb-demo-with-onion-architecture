@@ -43,53 +43,40 @@ public class MessageService : IMessageService
 
     private async Task<bool> UpsertMessage(Message message)
     {
-        try
-        {
-            var response = await _messageContainer.UpsertItemAsync(message, new PartitionKey(message.PartitionKey));
-            return response.StatusCode == HttpStatusCode.Created;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
+        var response = await _messageContainer.UpsertItemAsync(message, new PartitionKey(message.PartitionKey));
+        return response.StatusCode == HttpStatusCode.Created;
+        
     }
-
+    
     public async Task<bool> UpdateMessageUserAvatar(User user)
     {
         var messages = new List<Message>();
-        try
+
+        var queryDefinition = new QueryDefinition("Select * from r where r.partionKey = @partitionKey")
+            .WithParameter("@partitionKey", user.Email);
+
+        var queryFromMessagesContainer =
+            _messageContainer.GetItemQueryIterator<Message>(queryDefinition);
+
+        while (queryFromMessagesContainer.HasMoreResults)
         {
-            var queryDefinition = new QueryDefinition("Select * from r where r.partionKey = @partitionKey")
-                .WithParameter("@partitionKey", user.Email);
-
-            var queryFromMessagesContainer =
-                _messageContainer.GetItemQueryIterator<Message>(queryDefinition);
-
-            while (queryFromMessagesContainer.HasMoreResults)
-            {
-                var response = await queryFromMessagesContainer.ReadNextAsync();
-                var ru = response.RequestCharge;
-                messages.AddRange(response.ToList());
-            }
-
-            foreach (var message in messages.ToList())
-            {
-                message.User.Avatar = user.Avatar;
-                var response = await _messageContainer.UpsertItemAsync(message, new PartitionKey(message.PartitionKey));
-            }
-
-            /* An Example using a stored procedure
-            var obj = new dynamic[] { user.Avatar };
-            _ = await _messageContainer.Scripts.ExecuteStoredProcedureAsync<string>("updateUserAvatar", new PartitionKey(user.Email), obj);
-            */
-
-            return true;
+            var response = await queryFromMessagesContainer.ReadNextAsync();
+            var ru = response.RequestCharge;
+            messages.AddRange(response.ToList());
         }
-        catch (Exception e)
+
+        foreach (var message in messages.ToList())
         {
-            Console.WriteLine(e);
-            return false;
+            message.User.Avatar = user.Avatar;
+            _ = await _messageContainer.UpsertItemAsync(message, new PartitionKey(message.PartitionKey));
         }
+
+        /* An Example using a stored procedure
+        var obj = new dynamic[] { user.Avatar };
+        _ = await _messageContainer.Scripts.ExecuteStoredProcedureAsync<string>("updateUserAvatar", new PartitionKey(user.Email), obj);
+        */
+
+        return true;
+        
     }
 }

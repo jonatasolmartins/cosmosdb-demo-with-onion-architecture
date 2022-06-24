@@ -33,18 +33,10 @@ public class UserService : IUserService
 
     public async Task<bool> UpdateAvatar(User user)
     {
-        try
-        {
-            var url = await _multimediaRepository.UploadImage(user.Avatar, "useravatar", user.Email);
-            //var data = JsonConvert.SerializeObject(user);
-            //await _queueClient.SendMessageAsync(data);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-       
+        var url = await _multimediaRepository.UploadImage(user.Avatar, "useravatar", user.Email);
+        //var data = JsonConvert.SerializeObject(user);
+        //await _queueClient.SendMessageAsync(data);
+
         return true;
     }
 

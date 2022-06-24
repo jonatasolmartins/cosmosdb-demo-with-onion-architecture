@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <AssemblyName>@Server</AssemblyName>
         <RootNamespace>@Server</RootNamespace>
+        <UserSecretsId>ea54b64e-45df-4164-8c5f-2469b71f78e0</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>

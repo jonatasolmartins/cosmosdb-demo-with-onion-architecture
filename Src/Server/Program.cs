@@ -1,6 +1,7 @@
 using ChatRoom.Core.Application.Services.DependencyInjection;
 using ChatRoom.Infrastructure.Database.AppSettings;
 using ChatRoom.Infrastructure.Database.DependencyInjection;
+using ChatRoom.Rest.Api.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ChatRoom.BootCamp.Api"));
 }
 
+app.UseExceptionHandlerMiddleware();
 app.UseRouting();
 app.UseHttpsRedirection();
 app.MapControllers();

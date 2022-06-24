@@ -19,6 +19,7 @@ public class MessagesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(MessageToCreate newMessage)
     {
+        //TODO use auto Mapper instead
         var message = new Message()
         {
             Id = Guid.NewGuid(),
