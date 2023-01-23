@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AssemblyName>@Server</AssemblyName>
+        <RootNamespace>@Server</RootNamespace>
+        <UserSecretsId>ea54b64e-45df-4164-8c5f-2469b71f78e0</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Application\ChatRoom.Core.Application.Services\ChatRoom.Core.Application.Services.csproj" />
+      <ProjectReference Include="..\Infrastructure\ChatRoom.Infrastructure.Database\ChatRoom.Infrastructure.Database.csproj" />
+      <ProjectReference Include="..\Presentation\ChatRoom.Rest.Api\ChatRoom.Rest.Api.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="ChatRoom.Infrastructure.Database">
+        <HintPath>..\Infrastructure\ChatRoom.Infrastructure.Database\obj\Debug\net6.0\ChatRoom.Infrastructure.Database.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
