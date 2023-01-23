@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6E320212-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7EDD2F50-1F24-4897-A507-ACC93DC7BCDA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{71B407B5-749C-46BC-AB6A-CDACE3EF35AE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{6934B5DC-4FDA-4111-9BE9-53774758DB25}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Core.Domain.Abstractions", "Src\Core\Domain\ChatRoom.Core.Domain.Abstractions\ChatRoom.Core.Domain.Abstractions.csproj", "{B527D8A1-3D18-454C-9B68-8314C73A5719}"
