@@ -1,106 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/Server.csproj": {}
+    "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Server\\Server.csproj": {}
   },
   "projects": {
-    "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Application/ChatRoom.Core.Application.Services/ChatRoom.Core.Application.Services.csproj": {
+    "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Abstractions\\ChatRoom.Core.Domain.Abstractions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Application/ChatRoom.Core.Application.Services/ChatRoom.Core.Application.Services.csproj",
-        "projectName": "ChatRoom.Core.Application.Services",
-        "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Application/ChatRoom.Core.Application.Services/ChatRoom.Core.Application.Services.csproj",
-        "packagesPath": "/Users/jonatasolmartins/.nuget/packages/",
-        "outputPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Application/ChatRoom.Core.Application.Services/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/jonatasolmartins/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj": {
-                "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj"
-              },
-              "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Models/ChatRoom.Core.Domain.Models.csproj": {
-                "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Models/ChatRoom.Core.Domain.Models.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Azure.Storage.Queues": {
-              "target": "Package",
-              "version": "[12.10.0, )"
-            },
-            "Microsoft.Azure.Cosmos": {
-              "target": "Package",
-              "version": "[3.27.2, )"
-            },
-            "Microsoft.Extensions.Hosting.Abstractions": {
-              "target": "Package",
-              "version": "[7.0.0-preview.4.22229.4, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Abstractions\\ChatRoom.Core.Domain.Abstractions.csproj",
         "projectName": "ChatRoom.Core.Domain.Abstractions",
-        "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj",
-        "packagesPath": "/Users/jonatasolmartins/.nuget/packages/",
-        "outputPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/obj/",
+        "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Abstractions\\ChatRoom.Core.Domain.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Abstractions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jonatasolmartins/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Models/ChatRoom.Core.Domain.Models.csproj": {
-                "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Models/ChatRoom.Core.Domain.Models.csproj"
+              "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Models\\ChatRoom.Core.Domain.Models.csproj": {
+                "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Models\\ChatRoom.Core.Domain.Models.csproj"
               }
             }
           }
@@ -129,26 +58,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Models/ChatRoom.Core.Domain.Models.csproj": {
+    "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Models\\ChatRoom.Core.Domain.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Models/ChatRoom.Core.Domain.Models.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Models\\ChatRoom.Core.Domain.Models.csproj",
         "projectName": "ChatRoom.Core.Domain.Models",
-        "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Models/ChatRoom.Core.Domain.Models.csproj",
-        "packagesPath": "/Users/jonatasolmartins/.nuget/packages/",
-        "outputPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Models/obj/",
+        "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Models\\ChatRoom.Core.Domain.Models.csproj",
+        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jonatasolmartins/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -187,34 +118,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj": {
+    "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Infrastructure\\ChatRoom.Infrastructure.Database\\ChatRoom.Infrastructure.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Infrastructure\\ChatRoom.Infrastructure.Database\\ChatRoom.Infrastructure.Database.csproj",
         "projectName": "ChatRoom.Infrastructure.Database",
-        "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj",
-        "packagesPath": "/Users/jonatasolmartins/.nuget/packages/",
-        "outputPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Infrastructure/ChatRoom.Infrastructure.Database/obj/",
+        "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Infrastructure\\ChatRoom.Infrastructure.Database\\ChatRoom.Infrastructure.Database.csproj",
+        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Infrastructure\\ChatRoom.Infrastructure.Database\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jonatasolmartins/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj": {
-                "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj"
+              "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Abstractions\\ChatRoom.Core.Domain.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Abstractions\\ChatRoom.Core.Domain.Abstractions.csproj"
               }
             }
           }
@@ -261,34 +194,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj": {
+    "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Presentation\\ChatRoom.Rest.Api\\ChatRoom.Rest.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Presentation\\ChatRoom.Rest.Api\\ChatRoom.Rest.Api.csproj",
         "projectName": "ChatRoom.Rest.Api",
-        "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj",
-        "packagesPath": "/Users/jonatasolmartins/.nuget/packages/",
-        "outputPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Presentation/ChatRoom.Rest.Api/obj/",
+        "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Presentation\\ChatRoom.Rest.Api\\ChatRoom.Rest.Api.csproj",
+        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Presentation\\ChatRoom.Rest.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jonatasolmartins/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj": {
-                "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Domain/ChatRoom.Core.Domain.Abstractions/ChatRoom.Core.Domain.Abstractions.csproj"
+              "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Abstractions\\ChatRoom.Core.Domain.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Domain\\ChatRoom.Core.Domain.Abstractions\\ChatRoom.Core.Domain.Abstractions.csproj"
               }
             }
           }
@@ -306,6 +241,10 @@
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"
+            },
+            "Microsoft.Azure.Cosmos": {
+              "target": "Package",
+              "version": "[3.27.2, )"
             }
           },
           "imports": [
@@ -323,40 +262,42 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/Server.csproj": {
+    "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/Server.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Server\\Server.csproj",
         "projectName": "@Server",
-        "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/Server.csproj",
-        "packagesPath": "/Users/jonatasolmartins/.nuget/packages/",
-        "outputPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Server/obj/",
+        "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jonatasolmartins/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Application/ChatRoom.Core.Application.Services/ChatRoom.Core.Application.Services.csproj": {
-                "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Core/Application/ChatRoom.Core.Application.Services/ChatRoom.Core.Application.Services.csproj"
+              "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Application\\ChatRoom.Core.Application.Services\\ChatRoom.Core.Application.Services.csproj": {
+                "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Core\\Application\\ChatRoom.Core.Application.Services\\ChatRoom.Core.Application.Services.csproj"
               },
-              "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj": {
-                "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Infrastructure/ChatRoom.Infrastructure.Database/ChatRoom.Infrastructure.Database.csproj"
+              "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Infrastructure\\ChatRoom.Infrastructure.Database\\ChatRoom.Infrastructure.Database.csproj": {
+                "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Infrastructure\\ChatRoom.Infrastructure.Database\\ChatRoom.Infrastructure.Database.csproj"
               },
-              "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj": {
-                "projectPath": "/Users/jonatasolmartins/Development/cosmosdb-demo-with-onion-architecture/Src/Presentation/ChatRoom.Rest.Api/ChatRoom.Rest.Api.csproj"
+              "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Presentation\\ChatRoom.Rest.Api\\ChatRoom.Rest.Api.csproj": {
+                "projectPath": "C:\\Users\\jonat\\Desktop\\cosmosdb-demo-with-onion-architecture\\Src\\Presentation\\ChatRoom.Rest.Api\\ChatRoom.Rest.Api.csproj"
               }
             }
           }
@@ -394,7 +335,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     }

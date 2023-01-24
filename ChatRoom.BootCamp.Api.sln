@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{2E242A4D-C4D6-45CD-BEE0-3640C86EF652}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{86AE5ED5-580B-43A2-B1AB-1538B6B5D50E}"
@@ -9,27 +11,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6E320212-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7EDD2F50-1F24-4897-A507-ACC93DC7BCDA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{71B407B5-749C-46BC-AB6A-CDACE3EF35AE}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{6934B5DC-4FDA-4111-9BE9-53774758DB25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Core.Domain.Abstractions", "Src\Core\Domain\ChatRoom.Core.Domain.Abstractions\ChatRoom.Core.Domain.Abstractions.csproj", "{B527D8A1-3D18-454C-9B68-8314C73A5719}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Core.Domain.Abstractions", "Src\Core\Domain\ChatRoom.Core.Domain.Abstractions\ChatRoom.Core.Domain.Abstractions.csproj", "{B527D8A1-3D18-454C-9B68-8314C73A5719}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Core.Domain.Models", "Src\Core\Domain\ChatRoom.Core.Domain.Models\ChatRoom.Core.Domain.Models.csproj", "{CAD36201-C47F-41AF-B8BA-D949A7897577}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Core.Domain.Models", "Src\Core\Domain\ChatRoom.Core.Domain.Models\ChatRoom.Core.Domain.Models.csproj", "{CAD36201-C47F-41AF-B8BA-D949A7897577}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Infrastructure.Database", "Src\Infrastructure\ChatRoom.Infrastructure.Database\ChatRoom.Infrastructure.Database.csproj", "{B402956B-7BA2-4268-9E1E-3E3681FA605F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Infrastructure.Database", "Src\Infrastructure\ChatRoom.Infrastructure.Database\ChatRoom.Infrastructure.Database.csproj", "{B402956B-7BA2-4268-9E1E-3E3681FA605F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Rest.Api", "Src\Presentation\ChatRoom.Rest.Api\ChatRoom.Rest.Api.csproj", "{56D429DC-884B-4F17-9162-9C5E0688E031}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Rest.Api", "Src\Presentation\ChatRoom.Rest.Api\ChatRoom.Rest.Api.csproj", "{56D429DC-884B-4F17-9162-9C5E0688E031}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Src\Server\Server.csproj", "{67C98344-5791-41B8-8842-69D918CE7179}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Src\Server\Server.csproj", "{67C98344-5791-41B8-8842-69D918CE7179}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{E2CF9387-9136-4B83-BDE9-EBB3723BEA15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Core.Application.Services", "Src\Core\Application\ChatRoom.Core.Application.Services\ChatRoom.Core.Application.Services.csproj", "{D0E2686D-FC04-4B9A-9B1D-DDD095771CA3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureFunctions", "AzureFunctions", "{0522651A-2D01-4145-BDED-3ED305BFFE10}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.AzureFunctions", "Src\AzureFunctions\ChatRoom.AzureFunctions\ChatRoom.AzureFunctions.csproj", "{B8DF7E65-83CD-40E7-86AC-993AB0C92971}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.UserFunction", "Src\AzureFunctions\ChatRoom.UserFunction\ChatRoom.UserFunction.csproj", "{5EA989D1-FF28-4FB6-98B3-1D094622DEEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.BootCamp.Api.Test", "Test\ChatRoom.BootCamp.Api.Test\ChatRoom.BootCamp.Api.Test.csproj", "{B747153F-4FEF-4125-8847-A7D24EABD897}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,18 +55,13 @@ Global
 		{67C98344-5791-41B8-8842-69D918CE7179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67C98344-5791-41B8-8842-69D918CE7179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67C98344-5791-41B8-8842-69D918CE7179}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0E2686D-FC04-4B9A-9B1D-DDD095771CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0E2686D-FC04-4B9A-9B1D-DDD095771CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0E2686D-FC04-4B9A-9B1D-DDD095771CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0E2686D-FC04-4B9A-9B1D-DDD095771CA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8DF7E65-83CD-40E7-86AC-993AB0C92971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8DF7E65-83CD-40E7-86AC-993AB0C92971}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8DF7E65-83CD-40E7-86AC-993AB0C92971}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8DF7E65-83CD-40E7-86AC-993AB0C92971}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EA989D1-FF28-4FB6-98B3-1D094622DEEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EA989D1-FF28-4FB6-98B3-1D094622DEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EA989D1-FF28-4FB6-98B3-1D094622DEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EA989D1-FF28-4FB6-98B3-1D094622DEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B747153F-4FEF-4125-8847-A7D24EABD897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B747153F-4FEF-4125-8847-A7D24EABD897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B747153F-4FEF-4125-8847-A7D24EABD897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B747153F-4FEF-4125-8847-A7D24EABD897}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{86AE5ED5-580B-43A2-B1AB-1538B6B5D50E} = {2E242A4D-C4D6-45CD-BEE0-3640C86EF652}
@@ -81,9 +74,9 @@ Global
 		{56D429DC-884B-4F17-9162-9C5E0688E031} = {86AE5ED5-580B-43A2-B1AB-1538B6B5D50E}
 		{67C98344-5791-41B8-8842-69D918CE7179} = {2E242A4D-C4D6-45CD-BEE0-3640C86EF652}
 		{E2CF9387-9136-4B83-BDE9-EBB3723BEA15} = {6E320212-3AAF-44B7-8B36-F9B89F8BB877}
-		{D0E2686D-FC04-4B9A-9B1D-DDD095771CA3} = {E2CF9387-9136-4B83-BDE9-EBB3723BEA15}
-		{0522651A-2D01-4145-BDED-3ED305BFFE10} = {2E242A4D-C4D6-45CD-BEE0-3640C86EF652}
-		{B8DF7E65-83CD-40E7-86AC-993AB0C92971} = {0522651A-2D01-4145-BDED-3ED305BFFE10}
-		{5EA989D1-FF28-4FB6-98B3-1D094622DEEF} = {0522651A-2D01-4145-BDED-3ED305BFFE10}
+		{B747153F-4FEF-4125-8847-A7D24EABD897} = {71B407B5-749C-46BC-AB6A-CDACE3EF35AE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8B1D5DD-F84B-49A5-9E59-20693E5F87F1}
 	EndGlobalSection
 EndGlobal
